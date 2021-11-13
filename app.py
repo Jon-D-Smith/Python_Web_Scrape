@@ -6,7 +6,7 @@ soup = BeautifulSoup(doc.text, 'html.parser')
 
 print(soup.title)
 for image in soup.find_all('img'):
-    print(image)
+    print(image['src'])
 
-for link in soup.find_all('a'):
-    print(link)
+for link in soup.find_all('a', href=True):
+    print(link['href'])
